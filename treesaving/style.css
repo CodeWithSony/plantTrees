@@ -1,0 +1,204 @@
+
+/* from eent assignment */
+.maincontainer{
+  
+    width: 100%;
+    height: 100vh;
+
+    display: block;
+    margin: auto;
+    justify-content: center
+
+ align-items: center;
+
+ background-color: rgb(7 76 3);
+ /* background-image: linear-gradient(to right,  rgb(7 76 3) , rgb(15, 246, 38)); */
+ background-image: linear-gradient(to right, rgb(57 212 232) , #0606b4);
+
+
+}
+/* "box box box1 box2"
+"box box box3 box4" */
+.container{
+    width: 95%;
+    height: 100%;
+    padding: 5px 26px;
+    display: grid;
+    background-color: rgb(7 76 3);
+    /* background-image: linear-gradient(to right,  rgb(7 76 3) , rgb(15, 246, 38)); */
+    background-image: linear-gradient(to right, rgb(57 212 232) , #0606b4);
+
+    grid-gap: 1rem;
+    grid-template-areas: 
+    "boxBig boxBig box1 box2"
+    "boxBig boxBig box3 box4";
+}
+.bg{
+    background-color: rgb(7 76 3);
+    /* background-image: linear-gradient(to right,  rgb(7 76 3) , rgb(15, 246, 38)); */
+    background-image: linear-gradient(to right, rgb(57 212 232) , #0606b4);
+
+}
+.boxBig{
+grid-area: boxBig;
+/* background-image: linear-gradient(to right,  rgb(7 76 3) , rgb(15, 246, 38)); */
+background-image: linear-gradient(to right, rgb(57 212 232) , #0606b4);
+
+}
+.box-1{
+grid-area: box1;
+}
+.box-2{
+grid-area: box2;
+}
+.box-3{
+grid-area: box3;
+}
+.box-4{
+grid-area: box4;
+}
+.lilBox1{
+object-fit: cover;
+width: 100%;
+height: 88%;
+}
+.lilBox{
+width: 100%;
+
+}
+video{
+border-radius: 16px;
+}
+.design{
+padding: 5px 0;
+font-family: sans-serif;
+color: greenyellow;
+}
+.detail{
+font-family: sans-serif;
+color: white;
+}
+.detail1{
+font-family: sans-serif;
+color: white;
+/* height: 89px; */
+font-size: 18px;
+/* height: 89px; */
+}
+h2{
+font-family: sans-serif;
+color: white;
+padding: 10px 26px;
+}
+
+/* edited */
+.bg > video {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+}
+
+.fiction{
+    text-align: center;
+    font-size: 45px;
+    padding: 2.4rem 0;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
+@media screen and (max-width: 1226px){
+
+
+.container{
+width: 100%;
+height: auto;
+padding: 5px 26px;
+display: grid;
+/* background-color: green; */
+grid-gap: 1rem;
+grid-template-areas: 
+"box box"
+"box1 box2"
+"box3 box4";
+}
+.boxBig{
+grid-area: box;
+}
+.box-1{
+grid-area: box1;
+}
+.box-2{
+grid-area: box2;
+}
+.box-3{
+grid-area: box3;
+}
+.box-4{
+grid-area: box4;
+}
+#bigger{
+    height: 78vh;
+object-fit: cover;
+width: 100%;
+}
+.lilBox{
+width: 100%;
+
+}
+video{
+border-radius: 16px;
+}
+.design{
+font-family: sans-serif;
+color: rgb(136 243 125 / 78%);
+font-size: 1.4rem;
+}
+.detail{
+font-family: sans-serif;
+color: white;
+line-height:20px !important;
+}
+h2{
+font-family: sans-serif;
+color: white;
+padding: 10px 26px;
+}
+}
+
+@media screen and (max-width: 588px){
+.maincontainer{
+   margin: 0;
+   width: 100%;
+  }
+
+
+.container{
+width: 100%;
+padding: 26px 26px;
+display: grid;
+/* background-color: green; */
+grid-gap: 1rem;
+grid-template-areas: 
+"box"
+"box1"
+"box2"
+"box3"
+"box4";
+}
+.boxBig{
+grid-area: box;
+}
+.box-1{
+grid-area: box1;
+}
+.box-2{
+grid-area: box2;
+}
+.box-3{
+grid-area: box3;
+}
+.box-4{
+grid-area: box4;
+}
+}
+from eent assignment

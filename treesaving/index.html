@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tree saving website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <!-- <link
+    rel="stylesheet"
+    media="screen and (max-width: 955px)"
+    href="Phone.css"
+  /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+      body {
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+      hr {
+        margin: 6rem;
+      }
+      * {
+        margin: 0;
+        object-fit: cover;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* section{
+        margin: 2.4rem;
+        height: 100vh;
+        width: 100%;
+      } */
+
+      .logo {
+        text-decoration: none;
+        font-size: 31px;
+        font-size: 31px;
+        border: 2px solid rgb(74, 138, 227);
+        background-image: linear-gradient(to right, #06f006, #0404f5);
+
+        /* background: dodgerblue; */
+        box-shadow: -5px -9px blue;
+        margin: 0 17px;
+        padding: 0 10px;
+        color: #085b0d;
+        width: 11rem;
+        height: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .bold {
+        font-weight: bold;
+        font-family: sans-serif;
+        font-size: 29px;
+      }
+      nav {
+        display: flex;
+        color: white;
+        z-index: 2;
+        font-family: sans-serif;
+        position: sticky;
+        left: 0;
+        top: 0;
+        width: 100%;
+        justify-content: space-between;
+        height: 5rem;
+        align-items: center;
+      }
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style-type: none;
+      }
+      .menu {
+        list-style-type: none;
+        padding: 6px 10px;
+        font-size: 25px;
+        text-decoration: none;
+        color: white;
+      }
+
+      .input {
+        width: 16vw;
+        font-size: 1.4rem;
+        height: 2.4rem;
+        text-align: center;
+        /* color: #0ddd47; */
+        border-radius: 8px;
+      }
+
+      .submit {
+        padding: 6px;
+        width: 6vw;
+        border-radius: 8px;
+        font-size: 20px;
+        font-family: sans-serif;
+      }
+
+      nav::before {
+        position: absolute;
+        /* left: 0px;
+    top: -71px; */
+        content: "";
+        height: 5rem;
+        width: 100%;
+        opacity: 0.8;
+        /* background-color: rgb(36 46 249); */
+        /* background-image: linear-gradient(to right,  dodgerblue, rgb(63, 250, 91)); */
+        /* background-image: linear-gradient(rgb(7 76 3) , rgb(15, 246, 38)); */
+        background-image: linear-gradient(rgb(15, 246, 38), rgb(7 76 3));
+        /* background-image: linear-gradient(rgb(7 76 3), rgb(15, 246, 38), rgb(7 76 3)); */
+
+        z-index: -1;
+      }
+      #warning {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* z-index: 2; */
+
+        /* z-index: 1; */
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+      #warning::before {
+        height: 100vh;
+        width: 100vw;
+        z-index: -1;
+        position: absolute;
+        opacity: 1;
+        left: 0px;
+        top: -80px;
+        content: "";
+        background: url("images/brandon-green-GEyXGTY2e9w-unsplash.jpg")
+          no-repeat center center/cover;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* keyframe */
+      .forKeyframe {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18vw;
+        font-weight: bolder;
+        border-radius: 9px;
+        font-size: 21px;
+        border: 7px dotted blue;
+        /* font-weight: 400; */
+        color: blue;
+        font-family: sans-serif;
+        height: 50px;
+        bottom: 83px;
+        background-color: greenyellow;
+        position: relative;
+        /* left: -1200px; */
+        z-index: 10;
+        animation: mymove 10s infinite linear;
+        overflow: hidden;
+        scroll-behavior: smooth;
+      }
+      @keyframes mymove {
+        from {
+          left: -1vw;
+        }
+        to {
+          left: 100vw;
+        }
+      }
+
+      .para {
+        margin: auto;
+        width: 60%;
+      }
+
+      .para > h1 {
+        text-align: center;
+        font-size: 44px;
+        font-family: sans-serif;
+        color: red;
+        font-weight: bold;
+      }
+
+      /* .intro::before{
+        content: "";
+        position: absolute;
+        z-index: 4;
+        background: #06ee06;
+        opacity: 0.5;
+        left: 0;
+        top: 0;
+        height: 40vh;
+        width: 100%;
+
+      } */
+      .intro {
+        font-size: 36px;
+        font-family: sans-serif;
+        color: yellow;
+        word-spacing: 7px;
+        font-weight: bold;
+        text-align: center;
+        /* background: #06ee06; */
+      }
+
+      /* hover effect */
+      li:hover a {
+        /* background-color: rgb(32, 6, 199); */
+        background-image: linear-gradient(rgb(7 76 3), rgb(15, 246, 38));
+
+        /* border-radius: 8px; */
+        font-weight: bold;
+        /* color: rgb(73, 243, 73); */
+        color: white;
+      }
+      .submit:hover {
+        background-color: green;
+        color: white;
+        /* border-color: green; */
+      }
+
+      /*----------- for danger video section ------ */
+      #danger {
+        width: 100vw;
+        height: 100vh;
+        background-color: dodgerblue;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Video Container */
+      #warning-video {
+        width: 80vw;
+        background: green;
+        height: 80vh;
+        margin: auto auto;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-areas:
+          "bigbox bigbox box1 box2"
+          "bigbox bigbox box3 box4";
+      }
+
+      .fantasy {
+        text-align: center;
+        font-size: 44px;
+        font-family: "Roboto", sans-serif;
+        color: #ff3700;
+        position: relative;
+        top: 73px;
+        left: 0;
+        font-weight: bold;
+      }
+
+      .box {
+        background-color: greenyellow;
+        border: 4px solid;
+        width: 100%;
+      }
+      .box > video {
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .bigbox {
+        width: 100%;
+        border: 4px solid black;
+        grid-area: bigbox;
+      }
+
+      .box1 {
+        grid-area: box1;
+      }
+
+      .box2 {
+        grid-area: box2;
+      }
+
+      .box3 {
+        grid-area: box3;
+      }
+
+      .box4 {
+        grid-area: box4;
+      }
+
+      /* fiction */
+      .fiction {
+        font-family: "Roboto", sans-serif;
+      }
+
+      /* beauty section */
+      #beautyImg {
+        height: 110vh;
+        background-image: linear-gradient(to right, rgb(57 212 232), #0606b4);
+        width: 100vw;
+        /* background-color: #f3f903; */
+      }
+
+      .maincontainerImg {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        /* background-image: linear-gradient(to right,  rgb(7 76 3) , rgb(15, 246, 38)); */
+        background-image: linear-gradient(to right, rgb(57 212 232), #0606b4);
+        background-color: rgb(7 76 3);
+      }
+
+      /* containerBeautyImg */
+      .containerBeautyImg {
+        width: 90%;
+        height: 80vh;
+        padding: 5px 26px;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-areas:
+          "boxBigBeautyImg boxBigBeautyImg BeautyImg1 BeautyImg2"
+          "boxBigBeautyImg boxBigBeautyImg BeautyImg3 BeautyImg4";
+      }
+
+      .boxBigBeautyImg {
+        width: 100%;
+        grid-area: boxBigBeautyImg;
+      }
+
+      .BeautyImg1 {
+        grid-area: BeautyImg1;
+      }
+
+      .BeautyImg2 {
+        grid-area: BeautyImg2;
+      }
+
+      .BeautyImg3 {
+        grid-area: BeautyImg3;
+      }
+
+      .BeautyImg4 {
+        grid-area: BeautyImg4;
+      }
+
+      .BigImgHeight {
+        width: 100%;
+        margin: auto;
+        display: block;
+        height: 100%;
+        object-fit: fill;
+      }
+      .imgHeight {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+      }
+
+      /*  for Beauty Videos*/
+      #beautyVideo {
+        height: 150vh;
+        margin-top: 7rem;
+      }
+
+      .maincontainer-beauty-video {
+        width: 100%;
+        height: 145vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* background-image: linear-gradient(rgb(7 76 3) , rgb(15, 246, 38)); */
+        background-image: linear-gradient(to right, rgb(57 212 232), #0606b4);
+      }
+      /* "box box box1 box2"
+"box box box3 box4" */
+
+      /* It's for beauty videos */
+      .containerBeauty {
+        width: 69%;
+        height: 151vh;
+        padding: 26px 26px;
+        display: grid;
+        /* background-color: rgb(237, 92, 52); */
+        grid-gap: 1rem;
+        grid-template-areas:
+          "boxBigg boxBigg boxBigg boxBigg"
+          "boxBigg boxBigg boxBigg boxBigg"
+          "beauty1 beauty1 beauty2 beauty2"
+          "beauty3 beauty3 beauty4 beauty4";
+      }
+
+      .bg-color-dod {
+        border-radius: 9px;
+        width: 100%;
+        border: 2px solid;
+      }
+      .bg-color-dod > iframe {
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .boxBigg {
+        width: 100%;
+        border: 4px solid black;
+        grid-area: boxBigg;
+      }
+
+      .beauty1 {
+        grid-area: beauty1;
+      }
+
+      .beauty2 {
+        grid-area: beauty2;
+      }
+
+      .beauty3 {
+        grid-area: beauty3;
+      }
+
+      .beauty4 {
+        grid-area: beauty4;
+      }
+
+      .beautyVideo {
+        height: 100%;
+        width: 100%;
+      }
+
+      /* for dropdowns */
+      center {
+        height: 74px;
+      }
+
+      .dropbtn {
+        /* background-color: dodgerblue; */
+        background-image: linear-gradient(to right, rgb(57 212 232), #0606b4);
+        width: 221px;
+        margin: 0 9px;
+        color: white;
+        padding: 16px;
+        font-size: 25px;
+        border: 1px solid #676ed1;
+        cursor: pointer;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .icon {
+        font-size: 28px;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        margin: 0 9px;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        border: 1px solid rgb(241, 241, 241);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown:hover .dropbtn {
+        background-color: #1c27c9;
+      }
+
+      /* Pollution section starts */
+      #pollution {
+        margin-top: 16rem;
+
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background-image: linear-gradient(to right, rgb(57 212 232), #0606b4);
+
+        /* background-image: linear-gradient(rgb(7 76 3) , rgb(15, 246, 38)); */
+
+        height: 178vh;
+      }
+
+      /* containerPollution */
+      /* pollutionContainer */
+      .pollutionContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #containerPollution {
+        width: 94%;
+        height: 151vh;
+        padding: 26px 26px;
+        /* padding: 5px 26px; */
+        display: grid;
+        /* background-color: greenyellow; */
+        /* background-image: linear-gradient(rgb(7 76 3) , rgb(15, 246, 38)); */
+        background-image: linear-gradient(to right, rgb(57 212 232), #0606b4);
+
+        /* background-color: rgb(237, 92, 52); */
+        grid-gap: 1.8rem;
+        grid-template-areas:
+          "same-1 same-1 same-2 same-2"
+          "same-3 same-4 same-5 same-6"
+          "same-7 same-8 same-9 same-0";
+      }
+
+      .same-1 {
+        grid-area: same-1;
+        object-fit: cover;
+        /* grid-area: same-1; */
+        height: 931px;
+        width: 50%;
+      }
+
+      .same-2 {
+        grid-area: same-2;
+        object-fit: cover;
+        /* grid-area: same-1; */
+        height: 931px;
+        width: 50%;
+      }
+
+      .same-3 {
+        grid-area: same-3;
+      }
+
+      .same-4 {
+        grid-area: same-4;
+      }
+      .same-5 {
+        grid-area: same-5;
+      }
+      .same-6 {
+        grid-area: same-6;
+      }
+      .same-7 {
+        grid-area: same-7;
+      }
+      .same-8 {
+        grid-area: same-8;
+      }
+      .same-9 {
+        grid-area: same-9;
+      }
+      .same-10 {
+        grid-area: same-19;
+      }
+
+      .same {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 9px;
+      }
+
+      .svg:hover {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="bold">
+      <ul id="left">
+        <p class="logo menu">Save🌳s</p>
+        <li><a href="#warning" class="menu">Warning</a></li>
+        <center>
+          <div class="dropdown">
+            <li class="dropbtn">
+              <span>Nature Beauty</span>
+              <span class="icon">&#9759;</span>
+            </li>
+            <div class="dropdown-content mar-t-1">
+              <a href="#beautyImg">Beautyful😍</a>
+              <a href="#beautyVideo">Awesome🤩</a>
+            </div>
+          </div>
+        </center>
+        <!-- <li><a href="#beautyImg" class="menu">Beauty img</a></li>
+        <li><a href="#beautyVideo" class="menu">Beauty video</a></li> -->
+        <li><a href="#danger" class="menu">Danger</a></li>
+        <li><a href="#pollution" class="menu">Pollution</a></li>
+        <li><a href="#risk" class="menu">Risk</a></li>
+        <!-- above fiction -->
+        <!-- <li><a href="#save" class="menu">Save Us</a></li>  red data book-->
+        <li><a href="#pollution" class="menu">Solution</a></li>
+        <!-- <li><a href="#pollution" class="menu">Conclusion</a></li> -->
+
+        <!-- Pollution and it's solution -->
+      </ul>
+
+      <ul id="center">
+        <input type="text" class="input" placeholder="Search trees here" />
+
+        <svg
+          class="svg"
+          style="
+            padding: 5px;
+            background-color: greenyellow;
+            border: 2px solid green;
+            width: 35px;
+          "
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+        >
+          <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+          <path
+            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+          />
+        </svg>
+        <!-- <button type="submit" class="submit">Search  </button> -->
+      </ul>
+
+      <ul id="right">
+        <li class="right"><a class="menu" href="#">Sign up</a></li>
+        <li class="right"><a class="menu" href="#">Login</a></li>
+      </ul>
+    </nav>
+
+    <section id="warning">
+      <div class="para">
+        <h1 style="line-height: 81px">🌱Warning🌱</h1>
+        <p class="intro">
+          Saving tree and environment is very important for upcoming human
+          generation. We can't live without our environment and bio diversity.
+          Every living and non-living things are interwined with each other.
+          Trees are reasonable for attracting clouds and making rain. Rain water
+          is important for human life. Without eating human can servive upto
+          21days but without water we can only servive upto 3days. Because of a
+          lot of polution and soil erosion we can see that drinkable water level
+          is continously decreasing. So showing concern about this topic is
+          crucial.
+        </p>
+      </div>
+      <div class="forKeyframe">🌱Save Tree Save Life🌱</div>
+    </section>
+    <!-- <hr> -->
+    <!-- beauty section starts -->
+
+    <section class="bigcontainer" id="beautyImg">
+      <div class="maincontainerImg">
+        <h2 class="beautyDetail fiction">
+          🌱How cute🥰 and intelligent😍🤩 are they looking🧐... Can't we give
+          small efforts to save them😭...🌱
+        </h2>
+
+        <div class="containerBeautyImg">
+          <figure
+            class="boxBigBeautyImg"
+            style="display: flex; flex-flow: column"
+            class="BigimgHeight"
+          >
+            <img
+              src="images/birdandsnakeOrignal.png"
+              alt="Elephant at sunset"
+              class="BigImgHeight"
+            />
+            <!-- <figcaption style="font-size: 23px;
+                    text-align: center;">Smiling bhaiya</figcaption> -->
+          </figure>
+
+          <figure
+            class="BeautyImg1 imgHeight"
+            style="display: flex; flex-flow: column"
+          >
+            <img
+              src="images/sparrowandmirror.png"
+              alt="Elephant at sunset"
+              class="imgHeight"
+              style="/* text-align: center; */ margin: 0 auto; display: block"
+            />
+            <!-- <figcaption style="font-size: 23px;
+                    text-align: center;">Smiling bhaiya</figcaption> -->
+          </figure>
+
+          <figure
+            class="BeautyImg2 imgHeight"
+            style="display: flex; flex-flow: column"
+          >
+            <img
+              src="images/birdengineer.png"
+              alt="Elephant at sunset"
+              class="imgHeight"
+              style="/* text-align: center; */ margin: 0 auto; display: block"
+            />
+            <!-- <figcaption style="font-size: 23px;
+                    text-align: center;">Smiling bhaiya</figcaption> -->
+          </figure>
+
+          <figure
+            style="display: flex; flex-flow: column"
+            class="imgHeight BeautyImg3"
+          >
+            <img
+              src="images/duck.jpg"
+              alt="Elephant at sunset"
+              class="imgHeight"
+              style="/* text-align: center; */ margin: 0 auto; display: block"
+            />
+            <!-- <figcaption style="font-size: 23px;
+                    text-align: center;">Smiling bhaiya</figcaption> -->
+          </figure>
+
+          <figure
+            style="display: flex; flex-flow: column"
+            class="imgHeight BeautyImg4"
+          >
+            <img
+              src="images/white peacock.jpg"
+              alt="Elephant at sunset"
+              class="imgHeight"
+              style="margin: 0 auto; display: block"
+            />
+            <!-- <figcaption style="font-size: 23px;
+                    text-align: center;">Smiling bhaiya</figcaption> -->
+          </figure>
+        </div>
+      </div>
+    </section>
+    <!-- <hr> -->
+
+    <!-- beauty Video section -->
+
+    <section class="bigcontainer" id="beautyVideo">
+      <div class="maincontainer-beauty-video">
+        <h2 class="fiction">
+          🌱Let's glare to these beautyful scenery😍 of our nature...🌱
+        </h2>
+
+        <div class="containerBeauty">
+          <div class="boxBigg">
+            <iframe
+              class="beautyVideo"
+              src="https://www.youtube.com/embed/y9KKFDJKJaU"
+              title="The wealth of the Oceans-biodiversity in the Regional Seas"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="beauty1 bg-color-dod">
+            <!-- <iframe  class="beautyVideo" src="https://www.youtube.com/embed/IUN664s7N-c" title="The Breathtaking Beauty of Nature | HD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+
+            <iframe
+              class="beautyVideo"
+              src="https://www.youtube.com/embed/35npVaFGHMY"
+              title="Welcome to India ! [CINEMATIC TRAVEL FILM]"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="beauty2 bg-color-dod">
+            <iframe
+              class="beautyVideo"
+              src="https://www.youtube.com/embed/YTR21os8gTA"
+              title="Birds-of-Paradise Project Introduction"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="beauty3 bg-color-dod">
+            <!-- <iframe width="100%" class="beautyVideo" src="https://www.youtube.com/embed/Lca4cEjiHnY" title="The Most Beautiful Flying White Peacock" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  -->
+
+            <iframe
+              width="100%"
+              class="beautyVideo"
+              src="https://www.youtube.com/embed/CluO73rdb9E"
+              title="Kerala - The Real Beauty of Nature 4K! - Cinematic Video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="beauty4 bg-color-dod">
+            <iframe
+              class="beautyVideo"
+              src="https://www.youtube.com/embed/cqPOXK2IC74"
+              title="प्राकृतिक सदाबहार वन"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <hr> -->
+
+    <!-- danger section starts.... -->
+    <!-- It's Fiction and Fantasy Don't contribute to make it reality... -->
+
+    <!-- it's important danger section -->
+    <!-- <iframe width="956" height="538" src="https://www.youtube.com/embed/K8s7uIzmesI" title="Our Today Is Forever" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+
+    <!-- video container dangerous -->
+
+    <section class="bigcontainer" id="danger">
+      <div class="maincontainer">
+        <h2 class="fiction">
+          🌱Do we have courage to bear upcoming catastroph which will we create
+          by our own??????🌱
+        </h2>
+
+        <div class="container">
+          <div class="boxBig">
+            <iframe
+              width="100%"
+              height="815"
+              style="border-radius: 10px"
+              src="https://www.youtube.com/embed/BcJMq9pt3Y8"
+              title="How Environment Get Polluted |5 Major Causes of Environment Pollution in 2020|"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <p class="design">Warning</p>
+
+            <p class="detail detail1">
+              We are contributing to make earth a worse place by not caring
+              about our nature's health and continously spreading bad air on
+              it's environment through our vehicles, We are giving our
+              contribution in soil eroion by cutting a lot of trees each year to
+              make houses and industries. We are giving contribution to pollute
+              each resource which is required for our health. In other words we
+              are cutting a tree on which we are sitting right now.
+            </p>
+          </div>
+          <div class="box-1 bg">
+            <iframe
+              width="100%"
+              height="315"
+              class="lilBox"
+              style="border-radius: 10px"
+              src="https://www.youtube.com/embed/C65iqOSCZOY"
+              title="Explained | World&#39;s Water Crisis | FULL EPISODE | Netflix"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+
+            <p class="design">Warning</p>
+            <p class="detail">
+              What will happen if all polar ice will melt one day????....
+            </p>
+          </div>
+          <div class="box-2 bg">
+            <iframe
+              width="100%"
+              height="315"
+              class="lilBox"
+              style="border-radius: 10px"
+              src="https://www.youtube.com/embed/febBRv2Vftk"
+              title="The Tipping Point | Climate Change: The Facts | BBC Earth"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <p class="design">Warning</p>
+
+            <p class="detail">
+              See level can rise 80cm to a meter & sea storms will rise
+              gradually. Although we have around 75% water in our earth but we
+              can face in future world war three due to shortage of water
+              because drikable water has a limit.
+            </p>
+          </div>
+          <div class="box-3 bg">
+            <iframe
+              width="100%"
+              height="315"
+              class="lilBox"
+              style="border-radius: 10px"
+              src="https://www.youtube.com/embed/CaLOiGEDPJQ"
+              title="Why you don’t hear about the ozone layer anymore"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <p class="design">Warning</p>
+
+            <p class="detail">
+              We are continously losing our ozone layer who protects us from two
+              dangerous types of ultraviolet rays of sun. As the result of
+              losing ozone in future we can face severe skin cancer😱 and much
+              more problems.
+            </p>
+          </div>
+          <div class="box-4 bg">
+            <iframe
+              width="100%"
+              height="315"
+              class="lilBox"
+              style="border-radius: 10px"
+              src="https://www.youtube.com/embed/hlVXOC6a3ME"
+            >
+            </iframe>
+            <p class="design">Warning</p>
+
+            <p class="detail">
+              Arctic ice layer are becoming weak and weak every year. It can
+              affect ecosystem and life chain also.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <hr> -->
+    <!-- real link -->
+
+    <!-- https://youtu.be/hlVXOC6a3ME -->
+
+    <!-- ravish kumar wala...nadi wala -->
+    <!-- <section>
+
+    <iframe width="956" height="538" src="https://www.youtube.com/embed/ZoBe8SoZhsE" title="पैरिस की नदी सिन और गंगा की सफ़ाई का हाल | Paris&#39; Seine and Ganga&#39;s cleanliness missions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </section>
+   -->
+
+    <!-- Pollution -->
+
+    <section id="pollution">
+      <div class="pollutionContainer">
+        <h2 class="fiction">
+          Can't we do lil efforts to save
+          <strong>Biodiversity....?????😲😥😭</strong>
+        </h2>
+        <div id="containerPollution">
+          <figure class="same-1 same">
+            <img
+              class="same-1 same"
+              src="images/turtleandPolythin.png"
+              alt="Trulli"
+            />
+            <!-- <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption> -->
+          </figure>
+          <figure class="same-2 same">
+            <img class="same-8 same" src="images/poorbirds.png" alt="Trulli" />
+
+            <!-- <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption> -->
+          </figure>
+          <figure class="same-3 same">
+            <img
+              class="same-3 same"
+              src="images/dolphinandplastic.png"
+              alt="Trulli"
+            />
+            <!-- <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption> -->
+          </figure>
+          <figure class="same-4 same">
+            <img
+              class="same-4 same"
+              src="images/floridaBearJar.png"
+              alt="Trulli"
+            />
+            <!-- <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption> -->
+          </figure>
+          <figure class="same-5 same">
+            <img
+              class="same-5 same"
+              src="images/hiran&polythin.png"
+              alt="Trulli"
+            />
+            <!-- <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption> -->
+          </figure>
+          <figure class="same-6 same">
+            <img
+              class="same-6 same"
+              src="images/horsePolythin.png"
+              alt="Trulli"
+            />
+            <!-- <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption> -->
+          </figure>
+          <figure class="same-7 same">
+            <img
+              class="same-7 same"
+              src="images/racoon&polythin.png"
+              alt="Trulli"
+            />
+            <!-- <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption> -->
+          </figure>
+          <figure class="same-8 same">
+            <img
+              class="same-2 same"
+              src="images/elephant&garbage.png"
+              alt="Trulli"
+            />
+            <!-- <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption> -->
+          </figure>
+          <figure class="same-9 same">
+            <img
+              class="same-9 same"
+              src="images/racoon&polythin.png"
+              alt="Trulli"
+              style="width: 100%"
+            />
+            <!-- <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption> -->
+          </figure>
+          <figure class="same-0 same">
+            <img
+              class="same-0 same"
+              src="images/tigerextinction8.jpg"
+              alt="Trulli"
+              style="width: 100%"
+            />
+            <!-- <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption> -->
+          </figure>
+        </div>
+      </div>
+    </section>
+    <!-- <hr> -->
+
+    <section>
+      <div>
+        <!-- <li><a href="#beautyImg" class="menu">Beauty img</a></li>
+        <li><a href="#beautyVideo" class="menu">Beauty video</a></li> -->
+        <li><a href="#danger" class="menu">Danger</a></li>
+        <li><a href="#pollution" class="menu">Pollution</a></li>
+        <li><a href="#risk" class="menu">Risk</a></li>
+        <!-- above fiction -->
+        <!-- <li><a href="#save" class="menu">Save Us</a></li>  red data book-->
+        <li><a href="#pollution" class="menu">Solution</a></li>
+        <!-- <li><a href="#pollution" class="menu">Conclusion</a></li> -->
+      </div>
+    </section>
+
+    <hr />
+    <hr style="margin: 2.4rem" />
+    <section id="menuBar">
+      <div class="menuContainer">
+        <ul
+          style="
+            color: black;
+            font-size: 35px;
+            font-size: medium;
+            font-weight: bolder;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 60vh;
+            width: 30vw;
+          "
+        >
+          <li style="color: black"><a href="#">Hello</a></li>
+          <li style="color: black"><a href="#">Hi</a></li>
+          <li style="color: black"><a href="#">bye</a></li>
+          <li style="color: black"><a href="#">bye</a></li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>
+
+<!-- tomorrow task -->
+<!-- github yash mittal telegram brow -->
+<!-- 1. font awesome search magnifying glass -->
+<!-- beauty video height thick kerna hai -->
+<!-- gredient color adjust -->
+<!-- dropdown me work -->
+
+<!-- tomorrow work carousal for already vilupt prani -->
